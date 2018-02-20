@@ -31,7 +31,7 @@ Rails.application.configure do
   config.assets.compile = false
 
   #Add config to datatables in prod 
-  config.serve_static_assets = true
+  #config.serve_static_assets = true
 
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
