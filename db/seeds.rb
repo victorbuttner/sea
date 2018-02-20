@@ -1,7 +1,22 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+User.create!([
+  {email: "teste@teste.com", encrypted_password: "$2a$11$0KIvdV9KPOpLS5JyQ8/nbesueqA2Py4v0idvOrVpjpFwdZGsCBfsG", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2018-02-20 01:50:00", last_sign_in_at: "2018-02-20 01:47:00", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", username: "tester", superadmin_role: true, supervisor_role: false, user_role: false, name: ""}
+])
+Category.create!([
+  {name: "Oculos de Sol", description: nil},
+  {name: "Lente", description: nil}
+])
+Client.create!([
+  {cpf_cnpj: "011.484.380-50", rg: "123", birth_date: "2018-02-05", name: "Victor Buttner", sex: "Masculino", ocupation: "Desenvolvedor", civil_status: "Casado", postal: "91360-090", street: "Rua Engenheiro Walter Boehl", addr_number: 555, street_opt: "", district: "Vila Ipiranga", state: "RS", city: "Porto Alegre", phone1: "5193693154", phone2: "", email: "victorbuttner@gmail.com", status: true, obs: ""}
+])
+Order.create!([
+  {user_id: 1, client_id: 1, product_id: 123123, status: "123", sub_total: 11.0, price_total: 11.0},
+  {user_id: 1, client_id: 1, product_id: 123, status: "1", sub_total: 1.0, price_total: 1.0}
+])
+Product.create!([
+  {cod_prod: "P1", name: "OCULOS DE SOL", category_id: "1", buy_price: 10.0, sell_price: 15.0, amount: 12, status: "1", type: nil, supplier_id: 1},
+  {cod_prod: "P2", name: "LENTE 5MM", category_id: "2", buy_price: 11.0, sell_price: 11.0, amount: 12, status: "1", type: nil, supplier_id: 1},
+  {cod_prod: "P3", name: "OCULOS MANEIRO", category_id: "1", buy_price: 11.0, sell_price: 11.0, amount: 11, status: "11", type: nil, supplier_id: 1}
+])
+Supplier.create!([
+  {company_id: nil, cpf_cnpj: "123", name: "Forcenedor 1 ", end: "123", phone: "123", email: "123", status: false}
+])

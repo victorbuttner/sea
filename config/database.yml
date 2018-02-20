@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: sea-maxivisao_production
-  username: sea-maxivisao
+  url: <%= ENV['CLEARDB_DATABASE_URL'] %> 
+  username: <%= ENV['SEA-MAXIVISAO_DATABASE_USER'] %>
   password: <%= ENV['SEA-MAXIVISAO_DATABASE_PASSWORD'] %>

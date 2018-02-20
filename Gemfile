@@ -8,6 +8,7 @@ end
 gem "cpf_cnpj"
 gem 'wicked'
 gem 'cocoon'
+gem 'seed_dump'
 
 #auth 
 gem 'devise'
