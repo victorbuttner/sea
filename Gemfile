@@ -18,16 +18,12 @@ gem 'cancancan'
 #Styling
 gem "font-awesome-rails"
 gem 'bootstrap', '~> 4.0.0'
-gem 'jquery-rails'
 gem 'popper_js', '~> 1.12.9'
-gem 'jquery-datatables'
-gem 'jquery-ui-rails'
 gem 'bootstrap-datepicker-rails'
 gem "i18n-js"
-gem 'jquery-turbolinks'
 gem 'chartkick'
 gem 'groupdate'
-
+gem 'jquery-rails'
 #Admin panel
 gem 'rails_admin', '~> 1.2'
 
