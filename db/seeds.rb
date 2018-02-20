@@ -1,6 +1,3 @@
-User.create!([
-  {email: "teste@teste.com", encrypted_password: "$2a$11$0KIvdV9KPOpLS5JyQ8/nbesueqA2Py4v0idvOrVpjpFwdZGsCBfsG", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2018-02-20 01:50:00", last_sign_in_at: "2018-02-20 01:47:00", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", username: "tester", superadmin_role: true, supervisor_role: false, user_role: false, name: ""}
-])
 Category.create!([
   {name: "Oculos de Sol", description: nil},
   {name: "Lente", description: nil}
