@@ -1,0 +1,51 @@
+<!-- Breadcrumbs-->
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="#">Clientes</a>
+  </li>
+  <li class="breadcrumb-item active"><%=@client.name%></li>
+</ol>
+
+<!-- Nav tabs -->
+<ul class="nav nav-tabs nav-justified">
+    <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#profile" role="tab">Dados</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#orders" role="tab">Pedidos</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#recipes" role="tab">Receitas</a>
+    </li>
+</ul>
+<!-- Tab panels -->
+<div class="tab-content card">
+    <!--Panel 1-->
+    <div class="tab-pane fade in show active" id="profile" role="tabpanel">
+        <%= render 'profile_tab' %>
+    </div>
+    <!--/.Panel 1-->
+    <!--Panel 2-->
+    <div class="tab-pane fade" id="orders" role="tabpanel">
+        <%= render 'orders_tab' %>        
+    </div>
+    <!--/.Panel 2-->
+    <!--Panel 3-->
+    <div class="tab-pane fade" id="recipes" role="tabpanel">
+        <%= render 'recipes_tab' %>
+    </div>
+    <!--/.Panel 3-->
+
+               <div class="card-footer text-muted">
+                       <span class="pull-right">
+                         <%= link_to 'Editar', edit_client_path(@client) , class: 'btn btn-warning fa fa-pencil' %> |
+                         <%= link_to 'Remover', @client, method: :delete, data: { confirm: 'Você tem certeza?' }, class:'btn btn-danger fa fa-times' %>
+
+             
+                      </span>
+                  </div>
+            
+</div>
+
+
+

@@ -1,0 +1,27 @@
+<div class='card'>
+<div class='card-body'>
+<% if @orders.nil? %> 
+<p> Nao existem pedidos para este cliente ainda </p>
+<%else%>
+<table class="table table-bordered table-striped table-hover" id="dataTable" width="100%" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Status</th>
+        <th>Item amount</th>
+        <th>Price total</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td><%= order.status %></td>
+          <td><%= order.item_amount %></td>
+          <td><%= order.price_total %></td>
+        </tr>
+      <% end %>
+    </tbody>
+</table>  
+<%end%>
+</div>
+</div>

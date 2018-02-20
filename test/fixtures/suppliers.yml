@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company_id: 1
+  cpf_cnpj: MyString
+  name: MyString
+  end: MyString
+  phone: MyString
+  email: MyString
+  status: false
+
+two:
+  company_id: 1
+  cpf_cnpj: MyString
+  name: MyString
+  end: MyString
+  phone: MyString
+  email: MyString
+  status: false

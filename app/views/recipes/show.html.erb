@@ -1,0 +1,189 @@
+  <div class=" d-flex justify-content-around card-header-custom"> 
+    <h4 class="text-center">Dados da Receita</h4>
+  </div>
+
+  <div class="card-group">
+
+    <div class="card pull-right">
+      <div class="card-header"><h5>Lado Direito</h5></div>  
+
+      <div class="card-block">
+
+        <h5 class="card-title text-center">Longe</h5>
+        <ul class="list-group list-group-flush">
+<li class="list-group-item">
+  <strong>Longe dir esferico:</strong>
+  <%= @recipe.longe_dir_esferico %>
+</li>
+
+<li class="list-group-item">
+  <strong>Longe dir adicao:</strong>
+  <%= @recipe.longe_dir_adicao %>
+</li>
+
+<li class="list-group-item">
+  <strong>Longe dir cilindrico:</strong>
+  <%= @recipe.longe_dir_cilindrico %>
+</li>
+
+<li class="list-group-item">
+  <strong>Longe dir eixo:</strong>
+  <%= @recipe.longe_dir_eixo %>
+</li>
+        </ul>        
+      </div>
+      <div class="card-block">
+        <h5 class="card-title text-center">Perto</h5>
+        <ul class="list-group list-group-flush">
+<li class="list-group-item">
+  <strong>Perto dir esferico:</strong>
+  <%= @recipe.perto_dir_esferico %>
+</li>
+
+<li class="list-group-item">
+  <strong>Perto dir adicao:</strong>
+  <%= @recipe.perto_dir_adicao %>
+</li>
+
+<li class="list-group-item">
+  <strong>Perto dir cilindrico:</strong>
+  <%= @recipe.perto_dir_cilindrico %>
+</li>
+
+<li class="list-group-item">
+  <strong>Perto dir eixo:</strong>
+  <%= @recipe.perto_dir_eixo %>
+</li>
+
+        </ul>        
+      </div>
+  </div>
+
+    <div class="card">
+      <div class="card-header pull-left"> <h5>Lado Esquerdo</h5></div>  
+
+      <div class="card-block">
+
+        <h5 class="card-title text-center">Longe</h5>
+        <ul class="list-group list-group-flush">
+         <li class="list-group-item">
+  <strong>Longe esq esferico:</strong>
+  <%= @recipe.longe_esq_esferico %>
+</li>
+
+<li class="list-group-item">
+  <strong>Longe esq cilindrico:</strong>
+  <%= @recipe.longe_esq_cilindrico %>
+</li>
+
+<li class="list-group-item">
+  <strong>Longe esq adicao:</strong>
+  <%= @recipe.longe_esq_adicao %>
+</li>
+
+<li class="list-group-item">
+  <strong>Longe esq eixo:</strong>
+  <%= @recipe.longe_esq_eixo %>
+</li>
+        </ul>        
+      </div>
+      <div class="card-block">
+        <h5 class="card-title text-center">Perto</h5>
+        <ul class="list-group list-group-flush">
+<li class="list-group-item">
+  <strong>Perto esq esferico:</strong>
+  <%= @recipe.perto_esq_esferico %>
+</li>
+
+<li class="list-group-item">
+  <strong>Perto esq cilindrico:</strong>
+  <%= @recipe.perto_esq_cilindrico %>
+</li>
+
+<li class="list-group-item">
+  <strong>Perto esq adicao:</strong>
+  <%= @recipe.perto_esq_adicao %>
+</li>
+
+<li class="list-group-item">
+  <strong>Perto esq eixo:</strong>
+  <%= @recipe.perto_esq_eixo %>
+</li>
+        </ul>        
+      </div>
+  </div>
+</div>
+
+<div class="dropdown-divider"></div>
+
+<div class="row">
+<div class='col-sm-6'>
+<table class="table">
+  <tbody>
+<tr>
+  <td>Longe dp:</td>
+  <td><%= @recipe.longe_dp %></td>
+</tr>
+
+<tr>
+  <td>Perto dp:</td>
+  <td><%= @recipe.perto_dp %></td>
+</tr>
+
+<tr>
+  <td>Client:</td>
+  <td><%= @recipe.client.name %></td>
+</tr>
+
+<tr>
+  <td>Doctor:</td>
+  <td><%= @recipe.doctor_name %></td>
+</tr>
+
+<tr>
+  <td>Product:</td>
+  <td><%= @recipe.product.name %></td>
+</tr>
+
+
+  </tbody>
+</table>
+
+</div>
+
+<div class="col-sm-6"  >
+  <table class="table">
+  <tbody>
+<tr>
+  <td>Material:</td>
+  <td><%= @recipe.material %></td>
+</tr>
+
+<tr>
+  <td>Valor:</td>
+  <td><%= @recipe.valor %></td>
+</tr>
+
+<tr>
+  <td>Sinal:</td>
+  <td><%= @recipe.sinal %></td>
+</tr>
+
+<tr>
+  <td>Entrega:</td>
+  <td><%= @recipe.entrega %></td>
+</tr>
+
+<tr>
+  <td>Tipo:</td>
+  <td><%= @recipe.tipo %></td>
+</tr>
+  </tbody>
+</table>
+
+</div>
+
+</div>
+
+<%= link_to 'Editar', edit_recipe_path(@recipe) , class: 'btn btn-warning' , role:'button' %> |
+<%= link_to 'Voltar', receita_path , class: 'btn btn-success ' , role:'button' %>

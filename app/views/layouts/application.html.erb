@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SolariumMaxivisao</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
+
+    </head>
+
+   <% if user_signed_in? %>
+    
+  <body class="fixed-nav sticky-footer bg-dark" id="page-top">
+  <!-- Navigation-->
+  <%= render 'layouts/navigation' %>
+  
+  <div class="content-wrapper">
+  <% unless flash.empty? %>
+     <script type="text/javascript">
+          <% flash.each do |f| %>
+        <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
+         toastr['<%= type %>']('<%= f[1] %>');
+     <% end %>
+     </script>
+<% end %>
+    <div class="container-fluid">
+     
+      <%= yield %>
+     
+    </div>
+  </div>
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-right">
+          <small>Desenvolvido por victorbuttner.com</small>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+
+</body >
+
+<%else%>
+
+<body class="bg-dark" id="page-top"> 
+  <% unless flash.empty? %>
+     <script type="text/javascript">
+          <% flash.each do |f| %>
+        <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
+         toastr['<%= type %>']('<%= f[1] %>');
+     <% end %>
+     </script>
+  <% end %>
+    <div class="container-fluid">
+     
+      <%= yield %>
+     
+    </div>
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer >
+      <div class="container-fluid">
+        <div class="text-right">
+          <small>Desenvolvido por victorbuttner.com</small>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+
+</body>
+<%end%>
+</html>

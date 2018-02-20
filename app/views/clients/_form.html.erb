@@ -1,0 +1,129 @@
+<%= form_with(model: client, local: true) do |form| %>
+<% if client.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(client.errors.count, "error") %> Ocorreram erros ao salvar o cliente:</h2>
+
+      <ul>
+      <% client.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ 
+<div class="form-group row">
+
+
+ <div class="field col-md-8">
+    <%= form.label 'Nome' %> 
+    <%= form.text_field :name, id: :client_name, class: 'form-control', required: true %>
+  </div>
+
+  <div class='field col-md-2'>
+      <%= form.label 'Sexo' %>
+      <%= form.select :sex , options_for_select([['Masculino'],['Feminino']]) ,{} , {class: 'form-control', required: true } %>
+  </div>
+
+  <div class='field col-md-2'>
+    <%= form.label 'Data de Nascimento:' %>
+    <%= form.date_field :birth_date, class: 'form-control', required: true %>
+
+  </div>
+
+
+</div>
+
+<div class="form-group row">
+
+  <div class="field col-md-3">
+    <%= form.label 'CPF' %> 
+    <%= form.text_field :cpf_cnpj, id: :client_cpf_cnpj, class: 'form-control' ,:placeholder=> '999.999.999-99' , required: true %>
+  </div>
+
+  <div class='field col-md-3'>
+    <%= form.label 'RG' %> 
+    <%= form.text_field :rg, id: :client_rg,  id: :client_rg, class: 'form-control', required: true  %>
+
+  </div>
+
+  <div class="field col-md-3">
+    <%= form.label 'Estado Civil' %>
+    <%= form.select :civil_status , options_for_select([['Solteiro'],['Casado'],['Divorciado'],['União Estável']]) ,{} , {class: 'form-control', required: true } %>
+  </div>
+
+  <div class="field col-md-3">
+    <%= form.label 'Ocupação' %>
+    <%= form.text_field :ocupation,  id: :client_ocupation, class: 'form-control' , required: true %>
+  </div>
+</div>
+
+<div class="form-group row">
+  <div class="field col-md-2">
+    <%= form.label 'CEP' %>
+    <%= form.text_field :postal, id: :client_postal, class: 'form-control',:placeholder=> '00000-000', required: true  %>
+  </div>
+
+  <div class="field col-md-6">
+    <%= form.label 'Logradouro' %>
+    <%= form.text_field :street,  {id: :client_street, readonly: true,  class: 'form-control  , required: true '}%>
+  </div>
+
+  <div class="field col-md-2">
+    <%= form.label 'Número' %>
+    <%= form.text_field :addr_number ,  id: :client_addr_number, class: 'form-control', required: true  %>
+  </div>
+
+  <div class="field col-md-2">
+    <%= form.label 'Complemento' %>
+    <%= form.text_field :street_opt ,  id: :client_street_opt, class: 'form-control'  %>
+  </div>
+</div>
+
+<div class="form-group row">
+  <div class="field col-md-3">
+    <%= form.label 'Bairro' %>
+    <%= form.text_field :district,  {id: :client_district,readonly: true , class: 'form-control  ', required: true }  %>
+  </div>
+
+  <div class="field col-md-3">
+    <%= form.label 'Cidade' %>
+    <%= form.text_field :city ,  {id: :client_city, readonly: true , class: 'form-control  ', required: true }  %>
+  </div>
+
+  <div class="field col-md-3">
+    <%= form.label 'Estado' %>
+    <%= form.text_field :state,  {id: :client_state, readonly: true ,  class: 'form-control  ', required: true } %>
+  </div>
+</div>
+
+<div class="form-group row">
+  <div class="field col-md-4">
+    <%= form.label 'Telefone:' %>
+    <%= form.text_field :phone1 ,  id: :client_phone1, class: 'form-control' ,:placeholder=> '(xx)xxxx-xxxx', required: true  %>
+  </div>
+ <div class="field col-md-4">
+    <%= form.label 'Celular:' %>
+    <%= form.text_field :phone2,  id: :client_phone2, class: 'form-control' ,:placeholder=> '(xx)xxxxx-xxxx' %>
+  </div>
+
+  <div class="field col-md-4">
+    <%= form.label 'E-mail:' %>
+    <%= form.text_field :email,  id: :client_email, class: 'form-control',:placeholder=> 'nome@email.com.br' , required: true %>
+  </div>
+
+</div>
+
+<div class="form-group row ">
+  <div class="field col-md-12">
+    <%= form.label 'Observações:' %>
+    <%= form.text_area :obs,  id: :client_obs, class: 'form-control' %>
+  </div>
+</div>
+  
+  <%= form.hidden_field :status, :value =>  'ATIVO' %>
+
+<div class="actions">
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

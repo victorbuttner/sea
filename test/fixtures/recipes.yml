@@ -1,0 +1,67 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  longe_dir_esferico: 1.5
+  longe_dir_adicao: 1.5
+  longe_dir_cilindrico: 1.5
+  longe_dir_eixo: 1.5
+  longe_esq_esferico: 1.5
+  longe_esq_cilindrico: 1.5
+  longe_esq_adicao: 1.5
+  longe_esq_eixo: 1.5
+  longe_dp: 1.5
+  perto_dir_esferico: 1.5
+  perto_dir_adicao: 1.5
+  perto_dir_cilindrico: 1.5
+  perto_dir_eixo: 1.5
+  perto_esq_esferico: 1.5
+  perto_esq_cilindrico: 1.5
+  perto_esq_adicao: 1.5
+  perto_esq_eixo: 1.5
+  perto_dp: 1.5
+  client_id: 1
+  doctor_name: 
+  doctor_crm: 
+  doctor_phone: 
+  dp_ponte: 1.5
+  diagonal_maior: 1.5
+  material: 
+  valor: 1.5
+  sinal: 1.5
+  entrega: 2018-02-20
+  tipo: 
+  product_id: 1
+
+two:
+  user_id: 1
+  longe_dir_esferico: 1.5
+  longe_dir_adicao: 1.5
+  longe_dir_cilindrico: 1.5
+  longe_dir_eixo: 1.5
+  longe_esq_esferico: 1.5
+  longe_esq_cilindrico: 1.5
+  longe_esq_adicao: 1.5
+  longe_esq_eixo: 1.5
+  longe_dp: 1.5
+  perto_dir_esferico: 1.5
+  perto_dir_adicao: 1.5
+  perto_dir_cilindrico: 1.5
+  perto_dir_eixo: 1.5
+  perto_esq_esferico: 1.5
+  perto_esq_cilindrico: 1.5
+  perto_esq_adicao: 1.5
+  perto_esq_eixo: 1.5
+  perto_dp: 1.5
+  client_id: 1
+  doctor_name: 
+  doctor_crm: 
+  doctor_phone: 
+  dp_ponte: 1.5
+  diagonal_maior: 1.5
+  material: 
+  valor: 1.5
+  sinal: 1.5
+  entrega: 2018-02-20
+  tipo: 
+  product_id: 1

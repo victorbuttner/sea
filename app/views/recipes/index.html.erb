@@ -1,0 +1,44 @@
+<!-- Breadcrumbs-->
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="#">Receitas</a>
+  </li>
+  <li class="breadcrumb-item active">Lista de receitas</li>
+</ol>
+<div class="card mb-3">
+  <div class="card-body">
+  <div class="table-responsive">
+<table class="table table-bordered table-striped table-hover" id="dataTable" width="100%" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Cliente</th>
+      <th>Nome do Médico</th>
+      <th>Telefone do Médico</th>
+      <th>Entrega</th>
+      <th>Tipo</th>
+      <th>#</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recipes.each do |recipe| %>
+      <tr>
+        <td><%= recipe.try(:created_at).try(:strftime, '%d/%m/%Y') %></td>
+        <td><%= recipe.client.name %></td>
+        <td><%= recipe.doctor_name %></td>
+        <td><%= recipe.doctor_phone %></td>
+        <td><%= recipe.entrega %></td>
+        <td><%= recipe.tipo %></td>
+        <td class='text-center  '> <%= link_to '', recipe , class:'btn  btn-warning fa fa-eye' %>    </td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<br>
+
+<%= link_to 'Nova Receita', new_recipe_path , class: 'btn btn-primary' , role:'button' %>

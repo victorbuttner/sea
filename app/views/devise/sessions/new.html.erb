@@ -1,0 +1,24 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="card card-login mx-auto mt-5">
+      <div class="card-header">
+      <img class="rounded mx-auto d-block img-fluid" id="img_logo" src="/images/logo_login.jpg">
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <%= f.label :login  %>
+            <%= f.text_field  :login , autofocus: true, autocomplete: "login", placeholder: 'Informe o seu login', class: 'form-control ' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :password, 'Senha:' %>
+            <%= f.password_field :password, autocomplete: "off" , placeholder: 'Digite sua senha' , class: 'form-control'%>
+          </div>
+          <%= f.submit "Log in", class: 'btn btn-primary btn-block' %>
+        </form>
+      </div>
+    </div>
+
+    
+<% end %>
+
+

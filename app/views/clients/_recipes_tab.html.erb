@@ -1,0 +1,29 @@
+<div class='card'>
+
+<div class='card-body'>
+<% if @recipes.nil? %> 
+<p> Não existem receitas para este cliente ainda </p>
+<%else%>
+<table class="table table-bordered table-striped table-hover" id="dataTable" width="100%" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Data</th>
+        <th>Medico</th>
+        <th>Pedido</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @recipes.each do |recipe| %>
+        <tr>
+          <td><%= recipe.id %></td>
+          <td><%= recipe.client_id %></td>
+          <td>PEDIDO X</td>
+        </tr>
+      <% end %>
+    </tbody>
+</table>  
+<%end%>
+
+</div>
+</div>
