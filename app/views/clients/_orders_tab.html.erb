@@ -7,7 +7,6 @@
     <thead>
       <tr>
         <th>Status</th>
-        <th>Item amount</th>
         <th>Price total</th>
       </tr>
     </thead>
@@ -16,7 +15,6 @@
       <% @orders.each do |order| %>
         <tr>
           <td><%= order.status %></td>
-          <td><%= order.item_amount %></td>
           <td><%= order.price_total %></td>
         </tr>
       <% end %>

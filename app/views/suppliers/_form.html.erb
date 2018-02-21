@@ -10,43 +10,49 @@
       </ul>
     </div>
   <% end %>
+  <div class="form-group row">
 
-  <div class="field">
-    <%= form.label :company_id %>
-    <%= form.number_field :company_id, id: :supplier_company_id %>
+  <div class="col-sm-3">
+    <%= form.label :cpf_cpnj, 'CNPJ:' %>
+    <%= form.text_field :cpf_cpnj, id: :supplier_cpf_cpnj , class: 'form-control', required: true%>
   </div>
 
-  <div class="field">
-    <%= form.label :cpf_cnpj %>
-    <%= form.text_field :cpf_cnpj, id: :supplier_cpf_cnpj %>
+  <div class="col-sm-6">
+    <%= form.label :name, 'Nome:' %>
+    <%= form.text_field :name, id: :supplier_name , class: 'form-control' , required: true%>
   </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :supplier_name %>
+  <div class="col-sm-3"">
+    <%= form.label :phone ,'Telefone:' %>
+    <%= form.phone_field :phone, id: :supplier_phone, class: 'form-control' , required: true %>
   </div>
 
-  <div class="field">
-    <%= form.label :end %>
-    <%= form.text_field :end, id: :supplier_end %>
+</div>
+
+  <div class="form-group row">
+
+
+  <div class="col-sm-6">
+    <%= form.label :end, 'Endereço:' %>
+    <%= form.text_field :end, id: :supplier_end, class: 'form-control' , required: true%>
   </div>
 
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone, id: :supplier_phone %>
+
+
+  <div class="col-sm-3">
+    <%= form.label :email , 'E-mail:'%>
+    <%= form.email_field :email, id: :supplier_email, class: 'form-control' , required: true %>
   </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email, id: :supplier_email %>
+  <div class="col-sm-3">
+    <%= form.label :status , 'Status:' %>
+    <%= form.select :status, ['ATIVO','INATIVO'] , {}, class: 'form-control' , required: true%>
   </div>
 
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.check_box :status, id: :supplier_status %>
-  </div>
+</div>
+
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

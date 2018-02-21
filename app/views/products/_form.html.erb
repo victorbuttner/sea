@@ -1,4 +1,3 @@
-<div class='col-md-6'>
 
 <%= form_with(model: product, local: true,) do |form| %>
   <% if product.errors.any? %>
@@ -13,52 +12,57 @@
     </div>
   <% end %>
 
-  <div class="form-row">
-    <%= form.label :suppier_id %>
+  <div class="form-group row" >
+  <div class="col-sm-3">
+    <%= form.label :suppier_id, 'Fornecedor:' %>
     <%= form.collection_select :supplier_id, Supplier.all, :id, :name, {prompt: true}, {class: 'form-control'} %>
   </div>
 
-  <div class="form-row">
-    <%= form.label :cod_prod %>
+  <div class="col-sm-3">
+    <%= form.label :cod_prod, 'Código do Produto:' %>
     <%= form.text_field :cod_prod, id: :product_cod_prod , class: 'form-control'%>
   </div>
 
-  <div class="form-row">
-    <%= form.label :name %>
+  <div class="col-sm-6">
+    <%= form.label :name , 'Nome' %>
     <%= form.text_field :name, id: :product_name, class: 'form-control' %>
   </div>
 
-  <div class="form-row">
-        
-    <%= form.label 'Cagetory' %>
-    <%= form.collection_select :category_id, Category.all, :id, :name, {prompt: true}, {class: 'form-control'} %>
-    
-     
-    
-
   </div>
 
-  
-
   <div class="form-row">
-    <%= form.label :buy_price %>
+     <div class="col-sm-3">
+     
+    <%= form.label 'Categoria' %>
+    <%= form.collection_select :category_id, Category.all, :id, :name, {prompt: true}, {class: 'form-control'} %>
+    </div>
+    
+
+  <div class="col-sm-3">
+    <%= form.label :buy_price, 'Preço de Compra:' %>
     <%= form.text_field :buy_price, id: :product_buy_price, class: 'form-control' %>
   </div>
 
-  <div class="form-row">
-    <%= form.label :sell_price %>
+  <div class="col-sm-3">
+    <%= form.label :sell_price , 'Preço de venda:'%>
     <%= form.text_field :sell_price, id: :product_sell_price , class: 'form-control'%>
-  </div>
-
-  <div class="form-row">
-    <%= form.label :amount %>
+  </div> 
+    
+  <div class="col-sm-1">
+    <%= form.label :amount , 'Quantidade:' %>
     <%= form.number_field :amount, id: :product_amount, class: 'form-control' %>
   </div>
 
-  <div class="form-row">
-    <%= form.label :status %>
-    <%= form.text_field :status, id: :product_status, class: 'form-control' %>
+
+  <div class="col-sm-2">
+    <%= form.label :status, 'Status:' %>
+    <%= form.select :status, ['ATIVO','INATIVO'],{}, class: 'form-control' %>
+
   </div>
+
+  </div>
+
+  <br>
 
   <div class="actions">
     <%= form.submit %>

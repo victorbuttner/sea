@@ -11,6 +11,23 @@
     </div>
   <% end %>
 
+  <!-- Client Fields -->
+  <div class="form group" >
+
+  <div class="form-group row" >
+  
+  <div class="col-sm-4">
+    <%= label_tag 'Nome'%>
+
+    <%= text_field_tag 'nome do cliente' , {} , class: 'form-control' %>    
+  </div>
+
+
+  </div>
+
+
+
+  </div>
   <div class="field">
     <%= form.label :user_id %>
     <%= form.number_field :user_id, id: :order_user_id %>

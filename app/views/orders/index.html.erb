@@ -1,11 +1,10 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Orders</h1>
-
+<div class="card mb-3">
+  <div class="card-body">
+  <div class="table-responsive">
 <table>
   <thead>
     <tr>
-      <th>User</th>
       <th>Client</th>
       <th>Product</th>
       <th>Status</th>
@@ -18,7 +17,6 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= order.user_id %></td>
         <td><%= order.client_id %></td>
         <td><%= order.product_id %></td>
         <td><%= order.status %></td>
@@ -31,7 +29,9 @@
     <% end %>
   </tbody>
 </table>
-
+</div>
+</div>
+</div>
 <br>
 
 <%= link_to 'New Order', new_order_path %>

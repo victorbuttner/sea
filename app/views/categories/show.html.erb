@@ -1,14 +1,42 @@
-<p id="notice"><%= notice %></p>
+<!-- Breadcrumbs-->
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="#">Cateorias</a>
+  </li>
+  <li class="breadcrumb-item active"><%=@category.name%></li>
+</ol>
 
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
+<!-- Nav tabs -->
+<ul class="nav nav-tabs nav-justified">
+    <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#profile" role="tab">Dados</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#products" role="tab">Produtos</a>
+    </li>
+</ul>
+<!-- Tab panels -->
+<div class="tab-content card">
+    <!--Panel 1-->
+    <div class="tab-pane fade in show active" id="profile" role="tabpanel">
+        <%= render 'profile_tab' %>
+    </div>
+    <!--/.Panel 1-->
+    <!--Panel 2-->
+    <div class="tab-pane fade" id="products" role="tabpanel">
+        <%= render 'products_tab' %>        
+    </div>
+    <!--/.Panel 2-->
 
-<p>
-  <strong>Description:</strong>
-  <%= @category.description %>
-</p>
+               <div class="card-footer text-muted">
+                       <span class="pull-right">
+                         <%= link_to 'Editar', edit_category_path(@category) , class: 'btn btn-warning fa fa-pencil' %> |
+                         <%= link_to 'Remover', @category, method: :delete, data: { confirm: 'Você tem certeza?' }, class:'btn btn-danger fa fa-times' %>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+             
+                      </span>
+                  </div>
+            
+</div>
+
+

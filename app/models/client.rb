@@ -7,6 +7,8 @@ class Client < ApplicationRecord
 
   before_create :format_cpf
 
+  has_many :orders
+  has_many :recipes
 
   private
 

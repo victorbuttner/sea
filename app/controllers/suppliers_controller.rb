@@ -10,6 +10,7 @@ class SuppliersController < ApplicationController
   # GET /suppliers/1
   # GET /suppliers/1.json
   def show
+    @products = @supplier.products
   end
 
   # GET /suppliers/new

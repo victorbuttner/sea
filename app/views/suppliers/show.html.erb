@@ -1,39 +1,44 @@
-<p id="notice"><%= notice %></p>
+<!-- Breadcrumbs-->
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="#">Fornecedores</a>
+  </li>
+  <li class="breadcrumb-item active"><%=@supplier.name%></li>
+</ol>
 
-<p>
-  <strong>Company:</strong>
-  <%= @supplier.company_id %>
-</p>
+<!-- Nav tabs -->
+<ul class="nav nav-tabs nav-justified">
+    <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#profile" role="tab">Dados</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#orders" role="tab">Produtos</a>
+    </li>
 
-<p>
-  <strong>Cpf cnpj:</strong>
-  <%= @supplier.cpf_cnpj %>
-</p>
+</ul>
+<!-- Tab panels -->
+<div class="tab-content card">
+    <!--Panel 1-->
+    <div class="tab-pane fade in show active" id="profile" role="tabpanel">
+        <%= render 'profile_tab' %>
+    </div>
+    <!--/.Panel 1-->
+    <!--Panel 2-->
+    <div class="tab-pane fade" id="orders" role="tabpanel">
+        <%= render 'products_tab' %>        
+    </div>
+    <!--/.Panel 2-->
 
-<p>
-  <strong>Name:</strong>
-  <%= @supplier.name %>
-</p>
+               <div class="card-footer text-muted">
+                       <span class="pull-right">
+                         <%= link_to 'Editar', edit_supplier_path(@supplier) , class: 'btn btn-warning fa fa-pencil' %> |
+                         <%= link_to 'Remover', @supplier, method: :delete, data: { confirm: 'Você tem certeza?' }, class:'btn btn-danger fa fa-times' %>
 
-<p>
-  <strong>End:</strong>
-  <%= @supplier.end %>
-</p>
+             
+                      </span>
+                  </div>
+            
+</div>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @supplier.phone %>
-</p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @supplier.email %>
-</p>
 
-<p>
-  <strong>Status:</strong>
-  <%= @supplier.status %>
-</p>
-
-<%= link_to 'Edit', edit_supplier_path(@supplier) %> |
-<%= link_to 'Back', suppliers_path %>

@@ -1,6 +1,12 @@
-<h1>Editing Supplier</h1>
+<!-- Breadcrumbs-->
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="#">Fornecedores</a>
+  </li>
+  <li class="breadcrumb-item active"><%=@supplier.name%></li>
+</ol>
 
 <%= render 'form', supplier: @supplier %>
 
-<%= link_to 'Show', @supplier %> |
-<%= link_to 'Back', suppliers_path %>
+<%= link_to 'Editar', @supplier %> |
+<%= link_to 'Voltar', suppliers_path %>
