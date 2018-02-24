@@ -6,6 +6,40 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+       <% if current_user.try(:superadmin_role?) || current_user.try(:supervisor_role?) %>
+             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Pedidos">
+            <%= link_to root_path ,:class => "nav-link" do %>
+                <i class="fa fa-fw fa-area-chart"></i>
+                <span class="nav-link-text">Dashboard</span>
+            <% end %>
+      </li>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Estoque">
+            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseEstoque" data-parent="#exampleAccordion">
+                <span class="nav-link-text">Controle de Estoque</span>
+            </a>
+            <ul class="sidenav-second-level collapse" id="collapseEstoque">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Fornecedores">
+              <%= link_to suppliers_path ,:class => "nav-link" do %>
+                <i class="fa fa-fw fa-truck"></i>
+                <span class="nav-link-text">Fornecedores</span>
+            <% end %>
+            </li>
+              <li>
+                <%= link_to products_path do %>
+                 <i class="fa fa-fw fa-shopping-basket"></i>
+                <span class="nav-link-text">Produtos</span>
+                <% end %>
+              </li>
+            <li>
+              <%= link_to categories_path  do %>
+                 <i class="fa fa-fw fa-sitemap"></i>
+                <span class="nav-link-text">Categorias</span>
+            </a>
+              <% end %>
+            </li>
+          </ul>
+          </li>
+        <% end %>
 
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Cadastros">
         <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseCad" data-parent="#exampleAccordion">
@@ -13,50 +47,26 @@
                 <span class="nav-link-text">Cadastros</span>
         </a>
       <ul class="sidenav-second-level collapse" id="collapseCad">
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Fornecedores">
-            <%= link_to suppliers_path ,:class => "nav-link" do %>
-                <i class="fa fa-fw fa-area-chart"></i>
-                <span class="nav-link-text">Fornecedores</span>
-            <% end %>
-        </li>
+
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Clientes">
             <%= link_to  clients_path ,:class => "nav-link" do %>
-                <i class="fa fa-fw fa-area-chart"></i>
+                <i class="fa fa-fw fa-user"></i>
                 <span class="nav-link-text">Clientes</span>
             <% end %>
         </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Clientes">
             <%= link_to   recipes_path ,:class => "nav-link" do %>
-                <i class="fa fa-fw fa-area-chart"></i>
+                <i class="fa fa-fw fa-newspaper"></i>
                 <span class="nav-link-text">Receitas</span>
             <% end %>
         </li>
         </ul>
-        <% if current_user.try(:superadmin_role?) || current_user.try(:supervisor_role?) %>
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Estoque">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseEstoque" data-parent="#exampleAccordion">
-              <i class="fa fa-fw fa-sitemap"></i>
-                <span class="nav-link-text">Controle de Estoque</span>
-            </a>
-            <ul class="sidenav-second-level collapse" id="collapseEstoque">
-              <li>
-                <%= link_to products_path do %>
-                 Produtos
-                <% end %>
-              </li>
-            <li>
-              <%= link_to categories_path  do %>
-                Categorias
-              <% end %>
-            </li>
-          </ul>
-          </li>
-        <% end %>
+       
         
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Pedidos">
-            <%= link_to orders_path ,:class => "nav-link" do %>
-                <i class="fa fa-fw fa-area-chart"></i>
-                <span class="nav-link-text">Pedidos</span>
+            <%= link_to venda_index_path ,:class => "nav-link" do %>
+                <i class="fa fa-fw fa-shopping-cart"></i>
+                <span class="nav-link-text">Venda</span>
             <% end %>
         </li>
       </ul>

@@ -20,7 +20,8 @@
         <th>Categoria</th>
         <th>Valor</th>
         <th>Quantidade</th>
-        <th> #</th>
+        <th>Status</th>
+        <th>Detalhes</th>
       </tr>
     </thead>
 
@@ -33,6 +34,7 @@
           <td><%= product.category.name %></td>
           <td><%= number_to_currency(product.sell_price) %></td>
           <td><%= product.amount %></td>
+          <td><%= product.status %></td>
           <td class='text-center  '> <%= link_to '', product , class:'btn  btn-warning fa fa-eye' %>    </td>
          
         </tr>

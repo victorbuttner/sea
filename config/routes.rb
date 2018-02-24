@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'venda/index'
+
+  resource :cart, only: [:show]
+
   resources :order_items
   resources :payments
   get 'dashboard/index'
