@@ -19,6 +19,9 @@ class OrdersController < ApplicationController
 
   # GET /orders/1/edit
   def edit
+    @order_items = @order.order_items
+    @client = Client.search(params[:search])
+
   end
 
   # POST /orders
@@ -42,7 +45,7 @@ class OrdersController < ApplicationController
   def update
     respond_to do |format|
       if @order.update(order_params)
-        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
+        format.html { redirect_to edit_order_path(@order) , notice: 'Order was successfully updated.' }
         format.json { render :show, status: :ok, location: @order }
       else
         format.html { render :edit }
@@ -69,6 +72,7 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:user_id, :client_id, :product_id, :status, :sub_total, :price_total)
+      params.require(:order).permit(:user_id, :client_id, :product_id, :status, :sub_total, :price_total,payments_attributes: [:id, :payment_type, :price, :status, :_destroy])
     end
 end
+

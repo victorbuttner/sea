@@ -1,0 +1,23 @@
+total 1536
+drwxrwxrwx 0 root root     512 Fev 26 17:35 ./
+drwxrwxrwx 0 root root     512 Fev 21 12:19 ../
+drwxrwxrwx 0 root root     512 Fev 19 17:30 app/
+drwxrwxrwx 0 root root     512 Fev 19 17:30 bin/
+drwxrwxrwx 0 root root     512 Fev 19 17:30 config/
+-rwxrwxrwx 1 root root     130 Fev 19 17:30 config.ru*
+drwxrwxrwx 0 root root     512 Fev 20 01:02 db/
+-rwxrwxrwx 1 root root       0 Fev 26 17:35 diretory_list*
+-rwxrwxrwx 1 root root    2337 Fev 20 17:20 Gemfile*
+-rwxrwxrwx 1 root root    7093 Fev 20 17:31 Gemfile.lock*
+drwxrwxrwx 0 root root     512 Fev 24 21:26 .git/
+-rwxrwxrwx 1 root root     461 Fev 19 17:30 .gitignore*
+drwxrwxrwx 0 root root     512 Fev 19 17:30 lib/
+drwxrwxrwx 0 root root     512 Fev 20 17:44 log/
+-rwxrwxrwx 1 root root      71 Fev 19 17:30 package.json*
+drwxrwxrwx 0 root root     512 Fev 20 17:50 public/
+-rwxrwxrwx 1 root root     227 Fev 19 17:30 Rakefile*
+-rwxrwxrwx 1 root root     374 Fev 19 17:30 README.md*
+drwxrwxrwx 0 root root     512 Fev 19 17:30 test/
+-rwxrwxrwx 1 root root 1556521 Fev 20 02:18 time_zone_support.sql*
+drwxrwxrwx 0 root root     512 Fev 19 18:04 tmp/
+drwxrwxrwx 0 root root     512 Fev 19 17:30 vendor/

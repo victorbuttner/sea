@@ -11,82 +11,73 @@
     </div>
   <% end %>
 
-  <!-- Client Fields -->
-  <div class="form group" >
 
+  <div class="field col-sm-3 pull-right  ">
+  <%= form.label :user_id, 'Vendedor:' %>
+  <% if @order.try(:user_id).nil? %>
+  <%= text_field_tag :user_id , current_user.username, { id: :order_user_name , class: 'form-control', disabled: true}   %>
+  <%else%>
+  <%= form.text_field :user_id, {value: User.find(@order.user_id).username , id: :order_user_name , class: 'form-control', disabled: true} %>
+  <%end%>
+  </div>
+
+
+<div class="col-sm-12 ">
+<div class="card w-100" id="clients">
+  <div class="card-header">
+      <h5>Cliente</h5>
+  </div>
+  <div class="card-body" >
   <div class="form-group row" >
-  
-  <div class="col-sm-4">
-    <%= label_tag 'Nome'%>
-
-    <%= text_field_tag 'nome do cliente' , {} , class: 'form-control' %>    
-    
+  <%= form.collection_select :client_id, Client.all, :id, :name, {prompt: true}, {class: 'form-control col-sm-9 '} %>
+  <%= form.submit 'Selecionar Cliente', class: 'btn btn-secondary' %>
   </div>
+  <%if  order.try(:client_id) %>
+    <% if order.client.name? %>
+    <%= render 'client_fields' , order: order%>
+    <%end%>
+  <%else%>
+
+  <%end%>
+</div>
+</div>
+</div>
+<br>
+<div id="review_order" class='col-sm-3 pull-right'>
+
+    <%= render 'review_order', order_items: order.order_items, order: order %>
+</div>
 
 
+
+<div class="col-sm-6">
+
+<div class="card" >
+  <div class="card-header">
+      <h5>Pagamentos</h5>
   </div>
-
-
-
+  <div id="payments" class="card-body " >
+    <%= form.fields_for :payments do |payment| %>
+    <%=  render 'payment_fields', f: payment %>
+    <%end%>
   </div>
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id, id: :order_user_id %>
-  </div>
+</div>
+</div>
 
-  <div class="field">
-    <%= form.label :client_id %>
-    <%= form.number_field :client_id, id: :order_client_id %>
-  </div>
+<br>
 
-  <div class="field">
-    <%= form.label :product_id %>
-    <%= form.number_field :product_id, id: :order_product_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.text_field :status, id: :order_status %>
-  </div>
-
-  <div class="field">
-    <%= form.label :sub_total %>
-    <%= form.text_field :sub_total, id: :order_sub_total %>
-  </div>
-
-  <div class="field">
-    <%= form.label :price_total %>
-    <%= form.text_field :price_total, id: :order_price_total %>
-  </div>
-
+<div class="row">
   <div class="actions">
-    <%= form.submit %>
+    <%= link_to_add_association 'adicionar pagamento', form, :payments , partial: 'payment_fields' , class: 'btn btn-info', data: {
+      "association-insertion-node" => '#payments' , "association-insertion-method" => :append
+      } %>
+    <%= form.submit 'Atualizar Pedido', class: 'btn btn-primary pull-right  '  %>
+
   </div>
+</div>
+
 <% end %>
 
 
 
-<div class="row cart-body">
-    <form class="form-horizontal" method="post" action="">
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
-        <!--REVIEW ORDER-->
 
-
-        <!--REVIEW ORDER END-->
-    </div>
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-pull-6 col-sm-pull-6">
-        <!--SHIPPING METHOD-->
-
-
-        <!--SHIPPING METHOD END-->
-
-        <!--CREDIT CART PAYMENT-->
-
-        <!--CREDIT CART PAYMENT END-->
-    </div>
-    
-    </form>
-</div>
-<div class="row cart-footer">
-
-</div>

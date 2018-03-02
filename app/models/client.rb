@@ -10,6 +10,16 @@ class Client < ApplicationRecord
   has_many :orders
   has_many :recipes
 
+
+
+  def self.search(id)
+      if id
+        find(id)
+      else
+        nil
+      end
+  end 
+
   private
 
   def check_cpf

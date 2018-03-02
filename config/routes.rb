@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'venda/index'
 
-  resource :cart, only: [:show]
+  resource :cart, only: [:show,:destroy]
 
   resources :order_items
   resources :payments

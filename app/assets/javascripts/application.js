@@ -19,4 +19,5 @@
 //= require i18n/translations
 //= require bootstrap-datepicker
 //= require chartkick
+//= require cocoon
 //= require_tree .
