@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/nathanvda/cocoon.git
+  revision: 05435fb34a6c23a165befa5d381f5ae32f16a6a3
+  specs:
+    cocoon (1.2.11)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -64,7 +70,6 @@ GEM
     chartkick (2.2.5)
     childprocess (0.8.0)
       ffi (~> 1.0, >= 1.0.11)
-    cocoon (1.2.11)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -263,7 +268,7 @@ DEPENDENCIES
   cancancan
   capybara (~> 2.13)
   chartkick
-  cocoon
+  cocoon!
   coffee-rails (~> 4.2)
   cpf_cnpj
   devise
