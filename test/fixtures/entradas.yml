@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company_id: 1
+  supplier_id: 1
+  data_nf: 2018-03-03
+  data_entrada: 2018-03-03
+  nf: MyString
+  valor: 1.5
+
+two:
+  company_id: 1
+  supplier_id: 1
+  data_nf: 2018-03-03
+  data_entrada: 2018-03-03
+  nf: MyString
+  valor: 1.5

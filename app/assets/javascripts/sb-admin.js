@@ -1,3 +1,5 @@
+$(document).on('turbolinks:load', function() {
+
 (function($) {
   "use strict"; // Start of use strict
   // Configure tooltips for collapsed side navigation
@@ -43,3 +45,4 @@
     event.preventDefault();
   });
 }); // End of use strict
+})

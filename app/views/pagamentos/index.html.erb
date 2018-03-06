@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pagamentos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Entrada</th>
+      <th>Data pag</th>
+      <th>Valor pag</th>
+      <th>Report</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pagamentos.each do |pagamento| %>
+      <tr>
+        <td><%= pagamento.entrada_id %></td>
+        <td><%= pagamento.data_pag %></td>
+        <td><%= pagamento.valor_pag %></td>
+        <td><%= pagamento.report %></td>
+        <td><%= link_to 'Show', pagamento %></td>
+        <td><%= link_to 'Edit', edit_pagamento_path(pagamento) %></td>
+        <td><%= link_to 'Destroy', pagamento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pagamento', new_pagamento_path %>

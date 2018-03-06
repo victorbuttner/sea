@@ -1,0 +1,81 @@
+<%= form_with(model: entrada, local: true) do |form| %>
+  <% if entrada.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(entrada.errors.count, "error") %> prohibited this entrada from being saved:</h2>
+
+      <ul>
+      <% entrada.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="card">
+  <div class="card-header">
+    Entrada de Estoque
+  </div>
+  <div class="card-body">
+    <div class="form-group row">
+    <div class="field col-sm-2">
+      <%= form.label :data_nf , 'Data da Nota:'%>
+      <%= form.date_field :data_nf, id: :entrada_data_nf , class: 'form-control '  %>
+    </div>
+
+    <div class="field col-sm-2">
+      <%= form.label :data_entrada,'Data de Entrada:' %>
+      <%= form.date_field :data_entrada, id: :entrada_data_entrada , class: 'form-control' %>
+    </div>
+
+      <div class="field col-sm-3">
+      <%= form.label :supplier_id, 'Fornecedor:' %>
+      <%= form.collection_select :supplier_id, Supplier.all, :id, :name, {}, {class: 'form-control'} %>
+
+    </div>
+      <div class="field col-sm-3">
+      <%= form.label :nf , 'Número da Nota:' %>
+      <%= form.text_field :nf, id: :entrada_nf , class: 'form-control'%>
+    </div>
+
+      <div class="field col-sm-2">
+    <%= form.label :valor %>
+    <%= form.text_field :valor, id: :entrada_valor , class: 'form-control'%>
+  </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="card" >
+  <div class="card-header">
+      Produtos    <%= link_to_add_association 'adicionar produtos', form, :products , partial: 'product_fields' , class: 'btn btn-info pull-right', data: {
+      "association-insertion-node" => '#products' , "association-insertion-method" => :append
+      } %>
+  </div>
+  <div id="products" class="card-body " >
+    <%= form.fields_for :products do |product| %>
+    <%=  render 'product_fields', f: product %>
+    <%end%>
+  </div>
+</div>
+
+<div class="card" >
+  <div class="card-header">
+      Pagamento
+  </div>
+  <div id="payments" class="card-body " >
+    <%= form.fields_for :pagamentos do |pagamento| %>
+    <%=  render 'pagamento_fields', f: pagamento %>
+    <%end%>
+  </div>
+</div>
+</div>
+
+
+      <%= link_to_add_association 'adicionar pagamento', form, :pagamentos , partial: 'pagamento_fields' , class: 'btn btn-info', data: {
+      "association-insertion-node" => '#payments' , "association-insertion-method" => :append
+      } %>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

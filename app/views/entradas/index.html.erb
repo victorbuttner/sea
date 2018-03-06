@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Entradas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Company</th>
+      <th>Supplier</th>
+      <th>Data nf</th>
+      <th>Data entrada</th>
+      <th>Nf</th>
+      <th>Valor</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entradas.each do |entrada| %>
+      <tr>
+        <td><%= entrada.company_id %></td>
+        <td><%= entrada.supplier_id %></td>
+        <td><%= entrada.data_nf %></td>
+        <td><%= entrada.data_entrada %></td>
+        <td><%= entrada.nf %></td>
+        <td><%= entrada.valor %></td>
+        <td><%= link_to 'Show', entrada %></td>
+        <td><%= link_to 'Edit', edit_entrada_path(entrada) %></td>
+        <td><%= link_to 'Destroy', entrada, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Entrada', new_entrada_path %>

@@ -10,7 +10,8 @@ class Order < ApplicationRecord
    		set_order_status
   	end
 
-	before_save :update_subtotal , :update_total 
+	before_save :update_subtotal 
+	# , :update_total 
 
 	accepts_nested_attributes_for :payments , reject_if: :all_blank, allow_destroy: true
 
@@ -31,6 +32,7 @@ class Order < ApplicationRecord
 
 	  def update_subtotal
 	    self[:sub_total] = subtotal
+	    
 	  end
 
 	  def update_total

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :pagamentos
+  resources :entradas
   get 'venda/index'
 
   resource :cart, only: [:show,:destroy]

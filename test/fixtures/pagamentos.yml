@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  entrada_id: 1
+  data_pag: 2018-03-03
+  valor_pag: 1.5
+  report: false
+
+two:
+  entrada_id: 1
+  data_pag: 2018-03-03
+  valor_pag: 1.5
+  report: false

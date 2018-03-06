@@ -7,7 +7,7 @@ end
 
 gem "cpf_cnpj"
 gem 'wicked'
-gem 'cocoon'
+gem 'cocoon', :git => 'git://github.com/nathanvda/cocoon.git'
 gem 'seed_dump'
 
 #auth 
@@ -24,6 +24,8 @@ gem "i18n-js"
 gem 'chartkick'
 gem 'groupdate'
 gem 'jquery-rails'
+gem 'jquery-turbolinks'
+
 #Admin panel
 gem 'rails_admin', '~> 1.2'
 
