@@ -1,1 +1,17 @@
-<h1> Pagamento </h1>
+   <div class="payment_row"> 
+
+  <li class="list-inline-item">
+    <%= f.label :data_pag, 'Data do Pagamento' %>
+    <%= f.date_field :data_pag, id: :pagamento_data_pag , class: 'form-control text-center' %>
+  </li>
+
+    <li class="list-inline-item">
+    <%= f.label :valor_pag, 'Valor:' %>
+    <%= f.text_field :valor_pag, id: :pagamento_valor_pag, class: 'form-control text-center col-sm-4'  %>
+  </li>
+    <li class="list-inline-item">
+    <%= link_to_remove_association('', f, 
+      { wrapper_class: 'payment_row', class: 'btn btn-danger fa fa-times' }) %>
+  </li>
+
+</div>

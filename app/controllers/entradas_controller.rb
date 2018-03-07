@@ -69,6 +69,9 @@ class EntradasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def entrada_params
-      params.require(:entrada).permit(:company_id, :supplier_id, :data_nf, :data_entrada, :nf, :valor, product_attributes: [:cod_prod, :supplier_id, :name, :category_id, :buy_price, :sell_price, :amount, :status, :type])
+      params.require(:entrada).permit(:company_id, :supplier_id, :data_nf, :data_entrada, :nf, :valor,pagamentos_attributes: 
+                                                                                                        [:id, :entrada_id, :data_pag, :valor_pag, :report, :_destroy],  
+                                                                                                      products_attributes:
+                                                                                                       [:id,:cod_prod, :supplier_id, :name, :category_id, :buy_price, :sell_price, :amount, :status, :type, :_destroy])
     end
 end

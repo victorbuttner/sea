@@ -1,3 +1,3 @@
 class Pagamento < ApplicationRecord
-	belongs_to :entrada
+	belongs_to :entrada, optional: true
 end

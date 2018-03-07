@@ -45,10 +45,10 @@
 
   </div>
 </div>
-
+<br>
 <div class="card" >
   <div class="card-header">
-      Produtos    <%= link_to_add_association 'adicionar produtos', form, :products , partial: 'product_fields' , class: 'btn btn-info pull-right', data: {
+      Produtos    <%= link_to_add_association 'Novo Produto', form, :products , partial: 'product_fields' , class: 'btn btn-info pull-right', data: {
       "association-insertion-node" => '#products' , "association-insertion-method" => :append
       } %>
   </div>
@@ -58,10 +58,15 @@
     <%end%>
   </div>
 </div>
+<br>
+<div class='row' >
+<div class="col-sm-6">
 
 <div class="card" >
   <div class="card-header">
-      Pagamento
+      Pagamento   <%= link_to_add_association 'Novo Pagamento', form, :pagamentos , partial: 'pagamento_fields' , class: 'btn btn-info pull-right', data: {
+      "association-insertion-node" => '#payments' , "association-insertion-method" => :append
+  } %>
   </div>
   <div id="payments" class="card-body " >
     <%= form.fields_for :pagamentos do |pagamento| %>
@@ -69,12 +74,21 @@
     <%end%>
   </div>
 </div>
+
 </div>
 
+<div class="col-sm-6">
+<div class="card" >
+  <div class="card-header">
+      Dados da Nota
+       </div>
+  <div id="imostos" class="card-body " >
+  campos da nota fiscal
+  </div>
+</div>
+</div>
+<div>
 
-      <%= link_to_add_association 'adicionar pagamento', form, :pagamentos , partial: 'pagamento_fields' , class: 'btn btn-info', data: {
-      "association-insertion-node" => '#payments' , "association-insertion-method" => :append
-      } %>
   <div class="actions">
     <%= form.submit %>
   </div>
