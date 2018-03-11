@@ -20,13 +20,9 @@ Rails.application.routes.draw do
   resources :clients
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  authenticated :user do
-    if :user.try(:superadmin_role?) || :user.try(:supervisor_role?)
-      root 'dashboard#index'
-    else
-      root 'venda#index'
-    end
-  end
+  root 'venda#index'
+
+
 end
 
 
