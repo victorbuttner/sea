@@ -1,19 +1,28 @@
+<div class="form-row payment_row">
 
-   <div class="payment_row"> 
-    <li class="list-inline-item">
-    <%= f.label :payment_type, 'Tipo de Pagamento:' %>
-    <%= f.select :payment_type, options_for_select(['Dinheiro','Cheque']) ,{} , {class: 'form-control'}  %>
-    </li >
-    <li class="list-inline-item">    <%= f.label :price, 'Valor' %>
-    <%= f.text_field :price ,id: :payment_price , class: 'form-control text-center col-sm-4'%>
-    </li>    
-    <li class="list-inline-item">    <%= f.label :status, 'Status' %>
-    <%= f.select :status, options_for_select(['Pago','Aguardando Pagamento'])  ,{} , {class: 'form-control'} %>
-    </li >
-    <li class="list-inline-item">
+<div class="col-md-2">
+    <%= f.label :payment_type, 'Tipo:' %>
+    <%= f.select :payment_type, options_for_select(['Dinheiro','Cheque','Crédito','Débito']) ,{prompt: true} , {class: 'form-control'}  %>
+</div>
+    <div class="col-md-3">
+
+    <%= f.label :payment_mode, '' %>
+        <%= f.select :payment_mode, options_for_select(['À vista','2x','3x','4x','5x','6x','7x','8x','9x','10x'])  ,{} , {class: 'form-control'} %>
+</div>
+
+    <div class="col-md-2">
+
+       <%= f.label :price, 'Valor' %>
+    <%= f.text_field :price ,id: :payment_price , class: 'form-control text-center'%>
+    </div>
+    <div class="col-md-3 ">
+      <%= f.label :status, 'Status' %>
+    <%= f.select :status, options_for_select(['Pago','Aguardando Pagamento'])  ,{} , {class: 'form-control '} %>
+    </div >
+
+    <div class="col-md-2 d-flex align-items-end">
       <%= link_to_remove_association('', f, 
       { wrapper_class: 'payment_row', class: 'btn btn-danger fa fa-times' }) %>
-    </li>
     </div>
-
   
+</div>

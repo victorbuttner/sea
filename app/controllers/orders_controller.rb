@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    @orders = Order.all.where("user_id = #{current_user.id} and client_id is not null ")
   end
 
   # GET /orders/1
@@ -28,7 +28,7 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params)
-
+    @order.user_id = current_user.id  
     respond_to do |format|
       if @order.save
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
@@ -72,7 +72,7 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:user_id, :client_id, :product_id, :status, :sub_total, :price_total,payments_attributes: [:id, :payment_type, :price, :status, :_destroy])
+      params.require(:order).permit(:user_id, :client_id, :product_id, :status, :sub_total, :order_status_id, :price_total,payments_attributes: [:id, :payment_type, :price, :status, :_destroy])
     end
 end
 

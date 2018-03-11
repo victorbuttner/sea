@@ -9,7 +9,8 @@ gem "cpf_cnpj"
 gem 'wicked'
 gem 'cocoon', :git => 'git://github.com/nathanvda/cocoon.git'
 gem 'seed_dump'
-
+gem 'prawn'
+gem 'prawn-table'
 #auth 
 gem 'devise'
 gem 'toastr-rails'

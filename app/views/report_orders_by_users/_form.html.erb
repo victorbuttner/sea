@@ -1,0 +1,32 @@
+<%= form_with(model: report_orders_by_user, local: true) do |form| %>
+  <% if report_orders_by_user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(report_orders_by_user.errors.count, "error") %> prohibited this report_orders_by_user from being saved:</h2>
+
+      <ul>
+      <% report_orders_by_user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :date_start %>
+    <%= form.date_select :date_start, id: :report_orders_by_user_date_start %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_end %>
+    <%= form.date_select :date_end, id: :report_orders_by_user_date_end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :file_path %>
+    <%= form.text_field :file_path, id: :report_orders_by_user_file_path %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

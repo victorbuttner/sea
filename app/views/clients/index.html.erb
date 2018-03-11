@@ -27,8 +27,8 @@
       <tr>
       
         <td><%= client.id %> </td>
-        <td><%= client.cpf_cnpj %></td>
-        <td><%= client.name %></td>
+        <td><%= link_to client.cpf_cnpj, 'https://www.receita.fazenda.gov.br/Aplicacoes/SSL/ATCTA/CPF/ConsultaSituacao/ConsultaPublica.asp'%></td>
+        <td><%=  client.name %></td>
         <td><%= client.phone1 %></td>
         <td><%= client.email %></td>
         <td class='text-center  '> <%= link_to '', client , class:'btn  btn-warning fa fa-eye' %>    </td>

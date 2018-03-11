@@ -1,0 +1,30 @@
+<!-- Breadcrumbs-->
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="#">Relatórios</a>
+  </li>
+  <li class="breadcrumb-item active">Vendas por usuário</li>
+</ol>
+<table class="table table-bordered table-striped table-hover" width="100%" cellspacing="0">
+	<thead>
+		<th> data</th>
+		<th> usuario </th>
+		<th> total de vendas</th>
+	</thead>
+	<tbody>
+	<% @report.each do |rep| %>
+		<tr>
+			<td> <%= rep["data"] %></td>
+			<td> <%= rep["usuario"] %></td>
+			<td> <%= number_to_currency(rep["total"]) %></td>
+
+
+		</tr>
+		<%end%>
+	</tbody>
+
+</table>
+<p>
+<%= link_to "Printable Receipt (PDF)", report_orders_by_user_path( format: "pdf") %></p>
+
+<%= link_to 'Voltar', report_orders_by_users_path %>

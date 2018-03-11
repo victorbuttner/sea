@@ -6,12 +6,29 @@
    <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
          <% if current_user.try(:superadmin_role?) || current_user.try(:supervisor_role?) %>
-         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Pedidos">
+         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
             <%= link_to root_path ,:class => "nav-link" do %>
             <i class="fa fa-fw fa-area-chart"></i>
             <span class="nav-link-text">Dashboard</span>
             <% end %>
          </li>
+         
+         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Estoque">
+            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseReports" data-parent="#exampleAccordion">
+            <span class="nav-link-text">Relatórios</span>
+            </a>
+            <ul class="sidenav-second-level collapse" id="collapseReports">
+               <li class="nav-item" data-toggle="tooltip" data-placement="right" title="ReportOrders">
+                  <%= link_to report_orders_by_users_path ,:class => "nav-link" do %>
+                  <i class="fa fa-fw fa-truck"></i>
+                  <span class="nav-link-text">Pedidos por vendedor</span>
+                  <% end %>
+               </li>
+               
+            </ul>
+         </li>
+
+
          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Estoque">
             <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseEstoque" data-parent="#exampleAccordion">
             <span class="nav-link-text">Controle de Estoque</span>
@@ -37,7 +54,7 @@
                </li>
                <li>
                   <%= link_to entradas_path   do %>
-                  <i class="fa fa-fw fa-clipboard-list"></i>
+                  <i class="fa fa-fw fa-exchange-alt"></i>
                   <span class="nav-link-text">Entrada de NF</span>
                   <% end %>
                </li>
@@ -65,6 +82,12 @@
             </ul>
          </li>
          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Pedidos">
+            <%= link_to    orders_path ,:class => "nav-link" do %>
+            <i class="fa fa-fw fa-shopping-cart"></i>
+            <span class="nav-link-text">Pedidos</span>
+            <% end %>
+         </li>
+         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Pedidos">
             <%= link_to venda_index_path ,:class => "nav-link" do %>
             <i class="fa fa-fw fa-shopping-cart"></i>
             <span class="nav-link-text">Venda</span>
@@ -78,7 +101,9 @@
             </a>
          </li>
       </ul>
+      
       <ul class="navbar-nav ml-auto">
+      <!--
          <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-fw fa-envelope"></i>
@@ -168,33 +193,14 @@
                </div>
             </form>
          </li>
-         <li class="nav-item">
+         -->
+         <li class="nav-item pull-right">
             <% if user_signed_in? %>
-            <%= link_to('Edit registration', edit_user_registration_path) %>
-            <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+            <%= link_to('Logout', destroy_user_session_path, :method => :delete, class: 'btn') %>        
             <% else %>
-            <%= link_to('Register', new_user_registration_path)  %>
             <%= link_to('Login', new_user_session_path)  %>  
             <% end %>
          </li>
       </ul>
    </div>
 </nav>
-<!-- Logout Modal-->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-   <div class="modal-dialog" role="document">
-      <div class="modal-content">
-         <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-            </button>
-         </div>
-         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-         <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
-         </div>
-      </div>
-   </div>
-</div>

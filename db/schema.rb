@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180303031120) do
+ActiveRecord::Schema.define(version: 20180310015514) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -98,6 +98,7 @@ ActiveRecord::Schema.define(version: 20180303031120) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "payment_mode"
   end
 
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -151,6 +152,23 @@ ActiveRecord::Schema.define(version: 20180303031120) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "report_orders_by_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.date "date_start"
+    t.date "date_end"
+    t.string "file_path"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reports", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.date "start_date"
+    t.date "finish_date"
+    t.string "name"
+    t.string "file_path"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "suppliers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "company_id"
     t.string "cpf_cnpj"
@@ -179,7 +197,7 @@ ActiveRecord::Schema.define(version: 20180303031120) do
     t.string "username"
     t.boolean "superadmin_role"
     t.boolean "supervisor_role"
-    t.boolean "user_role"
+    t.boolean "user_role", default: true
     t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
