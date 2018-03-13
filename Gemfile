@@ -25,7 +25,7 @@ gem "i18n-js"
 gem 'chartkick'
 gem 'groupdate'
 gem 'jquery-rails'
-gem 'jquery-turbolinks'
+gem 'jquery-datatables-rails', '~> 3.4.0'
 
 #Admin panel
 gem 'rails_admin', '~> 1.2'

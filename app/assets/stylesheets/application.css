@@ -15,6 +15,7 @@
  *= require toastr
  *= require_self
  *= require_tree .
+ *= require dataTables/jquery.dataTables
  */
 .card-header-custom {
   border-radius: .25rem .25rem 0 0;
