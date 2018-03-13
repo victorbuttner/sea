@@ -2,16 +2,16 @@
 
   <li class="list-inline-item">
     <%= f.label :data_pag, 'Data do Pagamento' %>
-    <%= f.date_field :data_pag, id: :pagamento_data_pag , class: 'form-control text-center' %>
+    <%= f.date_field :data_pag, id: :pagamento_data_pag , class: 'form-control text-center', required: true %>
   </li>
 
     <li class="list-inline-item">
     <%= f.label :valor_pag, 'Valor:' %>
-    <%= f.text_field :valor_pag, id: :pagamento_valor_pag, class: 'form-control text-center col-sm-4'  %>
+    <%= f.text_field :valor_pag, id: :pagamento_valor_pag, class: 'form-control text-center col-sm-4' , required: true %>
   </li>
     <li class="list-inline-item">
     <%= link_to_remove_association('', f, 
-      { wrapper_class: 'payment_row', class: 'btn btn-danger fa fa-times' }) %>
+      { wrapper_class: 'payment_row', class: 'btn btn-danger fa fa-times', required: true }) %>
   </li>
 
 </div>

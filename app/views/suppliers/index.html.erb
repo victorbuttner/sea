@@ -11,13 +11,11 @@
 <table class="table table-bordered table-striped table-hover" id="dataTable" width="100%" cellspacing="0">
   <thead>
     <tr>
-      <th>Company</th>
-      <th>Cpf cnpj</th>
-      <th>Name</th>
-      <th>End</th>
-      <th>Phone</th>
-      <th>Email</th>
-      <th>Status</th>
+      <th>CNPJ</th>
+      <th>Nome</th>
+      <th>Endereço</th>
+      <th>Telefone</th>
+      <th>E-mail</th>
       <th>#</th>
 
     </tr>
@@ -26,13 +24,11 @@
   <tbody>
     <% @suppliers.each do |supplier| %>
       <tr>
-        <td><%= supplier.company_id %></td>
         <td><%= supplier.cpf_cnpj %></td>
         <td><%= supplier.name %></td>
         <td><%= supplier.end %></td>
         <td><%= supplier.phone %></td>
         <td><%= supplier.email %></td>
-        <td><%= supplier.status %></td>
         <td class='text-center  '> <%= link_to '', supplier , class:'btn  btn-warning fa fa-eye' %>    </td>
 
       </tr>

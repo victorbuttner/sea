@@ -28,7 +28,7 @@ class EntradasController < ApplicationController
 
     respond_to do |format|
       if @entrada.save
-        format.html { redirect_to @entrada, notice: 'Entrada was successfully created.' }
+        format.html { redirect_to entradas_path, notice: 'Entrada de NF foi salva com sucesso.' }
         format.json { render :show, status: :created, location: @entrada }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class EntradasController < ApplicationController
   def update
     respond_to do |format|
       if @entrada.update(entrada_params)
-        format.html { redirect_to @entrada, notice: 'Entrada was successfully updated.' }
+        format.html { redirect_to edit_entrada_path(@entrada), notice: 'Entrada de NF foi salva com sucesso.' }
         format.json { render :show, status: :ok, location: @entrada }
       else
         format.html { render :edit }

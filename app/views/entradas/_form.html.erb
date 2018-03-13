@@ -19,27 +19,27 @@
     <div class="form-group row">
     <div class="field col-sm-2">
       <%= form.label :data_nf , 'Data da Nota:'%>
-      <%= form.date_field :data_nf, id: :entrada_data_nf , class: 'form-control '  %>
+      <%= form.date_field :data_nf, id: :entrada_data_nf , class: 'form-control ' , required: true  %>
     </div>
 
     <div class="field col-sm-2">
       <%= form.label :data_entrada,'Data de Entrada:' %>
-      <%= form.date_field :data_entrada, id: :entrada_data_entrada , class: 'form-control' %>
+      <%= form.date_field :data_entrada, id: :entrada_data_entrada , class: 'form-control' , required: true%>
     </div>
 
       <div class="field col-sm-3">
       <%= form.label :supplier_id, 'Fornecedor:' %>
-      <%= form.collection_select :supplier_id, Supplier.all, :id, :name, {}, {class: 'form-control'} %>
+      <%= form.collection_select :supplier_id, Supplier.all, :id, :name, {}, {class: 'form-control', required: true} %>
 
     </div>
       <div class="field col-sm-3">
       <%= form.label :nf , 'Número da Nota:' %>
-      <%= form.text_field :nf, id: :entrada_nf , class: 'form-control'%>
+      <%= form.text_field :nf, id: :entrada_nf , class: 'form-control' , required: true%>
     </div>
 
       <div class="field col-sm-2">
     <%= form.label :valor %>
-    <%= form.text_field :valor, id: :entrada_valor , class: 'form-control'%>
+    <%= form.text_field :valor, id: :entrada_valor , class: 'form-control' , required: true%>
   </div>
     </div>
 
@@ -90,6 +90,6 @@
 <div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Salvar', class: 'btn btn-primary' %>
   </div>
 <% end %>

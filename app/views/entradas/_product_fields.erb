@@ -1,36 +1,36 @@
  <div class="product_row">
  <li class="list-inline-item">
     <%= f.label :name , 'Nome' %>
-    <%= f.text_field :name, id: :product_name, class: 'form-control' %>
+    <%= f.text_field :name, id: :product_name, class: 'form-control' , required: true%>
   </li>
 
 
      <li class="list-inline-item">
      
     <%= f.label 'Categoria' %>
-    <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: true}, {class: 'form-control'} %>
+    <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: true}, {class: 'form-control', required: true} %>
     </li>
     
 
   <li class="list-inline-item">
     <%= f.label :buy_price, 'R$ Compra:' %>
-    <%= f.text_field :buy_price, id: :product_buy_price, class: 'form-control' %>
+    <%= f.text_field :buy_price, id: :product_buy_price, class: 'form-control' , required: true%>
   </li>
 
   <li class="list-inline-item">
     <%= f.label :sell_price , 'R$ Venda:'%>
-    <%= f.text_field :sell_price, id: :product_sell_price , class: 'form-control'%>
+    <%= f.text_field :sell_price, id: :product_sell_price , class: 'form-control' , required: true%>
   </li> 
     
   <li class="list-inline-item">
     <%= f.label :amount , 'Quantidade:' %>
-    <%= f.number_field :amount, id: :product_amount, class: 'form-control' %>
+    <%= f.number_field :amount, id: :product_amount, class: 'form-control' , required: true%>
   </li>
 
 
   <li class="list-inline-item">
     <%= f.label :status, 'Status:' %>
-    <%= f.select :status, ['ATIVO','INATIVO'],{}, class: 'form-control' %>
+    <%= f.select :status, ['ATIVO','INATIVO'],{}, class: 'form-control' , required: true%>
 
   </li>
   
