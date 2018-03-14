@@ -16,7 +16,7 @@
     <%= render 'review_order', order_items: order.order_items, order: order %>
   <div id="status">
   <%= form.label :order_status_id , 'Status:' %>
-  <%= form.collection_select :order_status_id, OrderStatus.all, :id, :name, {prompt: true}, {class: 'form-control col-sm-9 '} %>
+  <%= form.text_field :order_status_id, {value: order.order_status.name , class: 'form-control', disabled: true }   %>
   </div>
   
 
