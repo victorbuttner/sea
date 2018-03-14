@@ -12,13 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require dataTables/jquery.dataTables
 //= require turbolinks
 //= require bootstrap
 //= require popper
 //= require toastr
 //= require i18n/translations
 //= require bootstrap-datepicker
+//= require Chart.bundle
 //= require chartkick
 //= require cocoon
 //= require_tree .

@@ -5,20 +5,19 @@
    </button>
    <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-         <% if current_user.try(:superadmin_role?) || current_user.try(:supervisor_role?) %>
-        
-         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Estoque">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseReports" data-parent="#exampleAccordion">
-            <span class="nav-link-text">Relatórios</span>
-            </a>
-            <ul class="sidenav-second-level collapse" id="collapseReports">
-               <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
                   <%= link_to dashboard_index_path ,:class => "nav-link" do %>
                   <i class="fa fa-fw fa-area-chart"></i>
                   <span class="nav-link-text">Dashboard</span>
                   <% end %>
                </li>
-               <li class="nav-item" data-toggle="tooltip" data-placement="right" title="ReportOrders">
+         <% if current_user.try(:superadmin_role?) || current_user.try(:supervisor_role?) %>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Estoque">
+            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseReports" data-parent="#exampleAccordion">
+            <span class="nav-link-text">Relatórios</span>
+            </a>
+            <ul class="sidenav-second-level collapse" id="collapseReports">
+                   <li class="nav-item" data-toggle="tooltip" data-placement="right" title="ReportOrders">
                   <%= link_to report_orders_by_users_path ,:class => "nav-link" do %>
                   <i class="fa fa-fw fa-truck"></i>
                   <span class="nav-link-text">Pedidos por vendedor</span>
@@ -34,24 +33,6 @@
             <span class="nav-link-text">Controle de Estoque</span>
             </a>
             <ul class="sidenav-second-level collapse" id="collapseEstoque">
-               <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Fornecedores">
-                  <%= link_to suppliers_path ,:class => "nav-link" do %>
-                  <i class="fa fa-fw fa-truck"></i>
-                  <span class="nav-link-text">Fornecedores</span>
-                  <% end %>
-               </li>
-               <li>
-                  <%= link_to products_path do %>
-                  <i class="fa fa-fw fa-shopping-basket"></i>
-                  <span class="nav-link-text">Produtos</span>
-                  <% end %>
-               </li>
-               <li>
-                  <%= link_to categories_path  do %>
-                  <i class="fa fa-fw fa-sitemap"></i>
-                  <span class="nav-link-text">Categorias</span>
-                  <% end %>
-               </li>
                <li>
                   <%= link_to entradas_path   do %>
                   <i class="fa fa-fw fa-list-ul"></i>
@@ -67,16 +48,34 @@
             <span class="nav-link-text">Cadastros</span>
             </a>
             <ul class="sidenav-second-level collapse" id="collapseCad">
+                           <li>
+                 <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Produtos</a>
+                 <ul class="sidenav-third-level collapse" id="collapseMulti2">
+                 <li>
+                  <%= link_to products_path do %>
+                  <i class="fa fa-fw fa-shopping-basket"></i>
+                  <span class="nav-link-text">Cadstro de Produtos</span>
+                  <% end %>
+               </li>
+               <li>
+                  <%= link_to categories_path  do %>
+                  <i class="fa fa-fw fa-sitemap"></i>
+                  <span class="nav-link-text">Categoria de Produtos</span>
+                  <% end %>
+               </li>
+                 </ul>
+               </li>  
+               <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Fornecedores">
+                  <%= link_to suppliers_path ,:class => "nav-link" do %>
+                  <i class="fa fa-fw fa-truck"></i>
+                  <span class="nav-link-text">Fornecedores</span>
+                  <% end %>
+               </li>
+               <li>
                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Clientes">
                   <%= link_to  clients_path ,:class => "nav-link" do %>
                   <i class="fa fa-fw fa-user"></i>
                   <span class="nav-link-text">Clientes</span>
-                  <% end %>
-               </li>
-               <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Clientes">
-                  <%= link_to   recipes_path ,:class => "nav-link" do %>
-                  <i class="fa fa-fw fa-newspaper"></i>
-                  <span class="nav-link-text">Receitas</span>
                   <% end %>
                </li>
             </ul>
@@ -84,13 +83,7 @@
          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Pedidos">
             <%= link_to    orders_path ,:class => "nav-link" do %>
             <i class="fa fa-fw fa-shopping-cart"></i>
-            <span class="nav-link-text">Pedidos</span>
-            <% end %>
-         </li>
-         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Pedidos">
-            <%= link_to venda_index_path ,:class => "nav-link" do %>
-            <i class="fa fa-fw fa-shopping-cart"></i>
-            <span class="nav-link-text">Venda</span>
+            <span class="nav-link-text">Vendas</span>
             <% end %>
          </li>
       </ul>

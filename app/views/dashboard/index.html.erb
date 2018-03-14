@@ -55,5 +55,30 @@
       </div>
       <%end%>
 <div class="row">
-
+<div class="col-md-6 ">
+<div class="card text-center">
+  <div class="card-header">
+    Resumo de vendas
+  </div>
+  <div class="card-body">
+    <%= column_chart @orders.group_by_day_of_week(:created_at, format: "%a").count %>
+  </div>
+  <div class="card-footer text-muted">
+    ultimos 7 dias
+  </div>
+</div>
+</div>
+<div class="col-md-6 ">
+<div class="card textcenter">
+  <div class="card-header">
+    Produtos vs Categorias
+  </div>
+  <div class="card-body">
+  <%= pie_chart  Category.joins(:products).group(:name).count %>
+  </div>
+  <div class="card-footer text-muted">
+    Quantidade de produtos por categoria
+  </div>
+</div>
+</div>
 </div>
