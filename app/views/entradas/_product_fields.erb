@@ -16,17 +16,17 @@
     </li>
     
 
-  <li class="list-inline-item">
+  <li class="list-inline-item col-sm-1">
     <%= f.label :buy_price, 'R$ Compra:' %>
     <%= f.text_field :buy_price, id: :product_buy_price, class: 'form-control' , required: true%>
   </li>
 
-  <li class="list-inline-item">
+  <li class="list-inline-item col-sm-1">
     <%= f.label :sell_price , 'R$ Venda:'%>
     <%= f.text_field :sell_price, id: :product_sell_price , class: 'form-control' , required: true%>
   </li> 
     
-  <li class="list-inline-item">
+  <li class="list-inline-item col-sm-1">
     <%= f.label :amount , 'Quantidade:' %>
     <%= f.number_field :amount, id: :product_amount, class: 'form-control' , required: true%>
   </li>
