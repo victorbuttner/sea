@@ -7,7 +7,7 @@
 
     <li class="list-inline-item">
     <%= f.label :valor_pag, 'Valor:' %>
-    <%= f.text_field :valor_pag, id: :pagamento_valor_pag, class: 'form-control text-center col-sm-4' , required: true %>
+    <%= f.text_field :valor_pag, { id: :pagamento_valor_pag, class: 'form-control text-center ' , required: true }%>
   </li>
     <li class="list-inline-item">
     <%= link_to_remove_association('', f, 

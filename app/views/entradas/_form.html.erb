@@ -14,7 +14,8 @@
 <div class="card">
   <div class="card-header">
     Entrada de Estoque
-  </div>
+    
+  </div> 
   <div class="card-body">
     <div class="form-group row">
     <div class="field col-sm-2">
@@ -39,7 +40,7 @@
 
       <div class="field col-sm-2">
     <%= form.label :valor %>
-    <%= form.text_field :valor, id: :entrada_valor , class: 'form-control' , required: true%>
+    <%= form.text_field :valor, { :value => number_to_currency(form.object.valor), id: :entrada_valor , class: 'form-control', disabled: true }%>
   </div>
     </div>
 
@@ -69,7 +70,12 @@
   } %>
   </div>
   <div id="payments" class="card-body " >
-    <%= form.fields_for :pagamentos do |pagamento| %>
+       <% if entrada.try(:pagamentos) %>
+      <% if entrada.pagamentos.sum(:valor_pag) != entrada.valor %>
+      <div class="alert alert-danger">Pagamentos diferentes do total!</div>
+      <%end%>
+    <%end%>
+     <%= form.fields_for :pagamentos do |pagamento| %>
     <%=  render 'pagamento_fields', f: pagamento %>
     <%end%>
   </div>
@@ -87,7 +93,8 @@
   </div>
 </div>
 </div>
-<div>
+</div>
+
 
   <div class="actions">
     <%= form.submit 'Salvar', class: 'btn btn-primary' %>

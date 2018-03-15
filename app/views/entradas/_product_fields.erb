@@ -1,9 +1,13 @@
  <div class="product_row">
  <li class="list-inline-item">
-    <%= f.label :name , 'Nome' %>
+    <%= f.label :name , 'Nome/Modelo' %>
     <%= f.text_field :name, id: :product_name, class: 'form-control' , required: true%>
   </li>
 
+ <li class="list-inline-item">
+    <%= f.label :cod_prod , 'Código/Referencia' %>
+    <%= f.text_field :cod_prod, id: :product_name, class: 'form-control' , required: true%>
+  </li>
 
      <li class="list-inline-item">
      
